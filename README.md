@@ -17,20 +17,32 @@ The output is given in HTML or plaintext. [@karel_origin](https://twitter.com/ka
 
 ## Installation
 
-LinkFinder supports **Python 3**.
+LinkFinder supports **Python 3** and can now be installed like any other CLI tool.
 
+### Option 1: Install via `pip` (user-only)
+
+```bash
+pip install --user git+https://github.com/GerbenJavado/LinkFinder.git
 ```
-$ git clone https://github.com/GerbenJavado/LinkFinder.git
-$ cd LinkFinder
-$ python setup.py install
+
+This installs the `linkfinder` command to `~/.local/bin`. Make sure that directory is in your `PATH`.
+
+### Option 2: Install via `pipx` (recommended for CLI tools)
+
+```bash
+pipx install git+https://github.com/GerbenJavado/LinkFinder.git
 ```
+
+This creates an isolated environment and installs the `linkfinder` command to `~/.local/bin`. Make sure that directory is in your `PATH`.
 
 ## Dependencies
 
-LinkFinder depends on the `argparse` and `jsbeautifier` Python modules. These dependencies can all be installed using [pip](https://pypi.python.org/pypi/pip).
+All dependencies are now managed via `pip`. They will be installed automatically when using `pip install .` or `pipx install`.
 
-```
-$ pip3 install -r requirements.txt
+Alternatively, you can install them manually with:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage

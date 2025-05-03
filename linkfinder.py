@@ -131,10 +131,10 @@ def send_request(url):
     q.add_header('Cookie', args.cookies)
 
     try:
-        sslcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+        sslcontext = ssl.create_default_context()
         response = urlopen(q, timeout=args.timeout, context=sslcontext)
     except:
-        sslcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+        sslcontext = ssl.create_default_context()
         response = urlopen(q, timeout=args.timeout, context=sslcontext)
 
     if response.info().get('Content-Encoding') == 'gzip':
@@ -285,7 +285,7 @@ def check_url(url):
     else:
         return False
 
-if __name__ == "__main__":
+def main():
     # Parse command line
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--domain",
@@ -401,3 +401,6 @@ if __name__ == "__main__":
 
     if args.output != 'cli':
         html_save(output)
+
+if __name__ == "__main__":
+    main()
