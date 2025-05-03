@@ -61,23 +61,23 @@ Short Form    | Long Form     | Description
 
 * Most basic usage to find endpoints in an online JavaScript file and output the HTML results to results.html:
 
-`python linkfinder.py -i https://example.com/1.js -o results.html`
+`linkfinder -i https://example.com/1.js -o results.html`
 
 * CLI/STDOUT output (doesn't use jsbeautifier, which makes it very fast):
 
-`python linkfinder.py -i https://example.com/1.js -o cli`
+`linkfinder -i https://example.com/1.js -o cli`
 
 * Analyzing an entire domain and its JS files:
 
-`python linkfinder.py -i https://example.com -d`
+`linkfinder -i https://example.com -d`
 
 * Burp input (select in target the files you want to save, right click, `Save selected items`, feed that file as input):
 
-`python linkfinder.py -i burpfile -b`
+`linkfinder -i burpfile -b`
 
 * Enumerating an entire folder for JavaScript files, while looking for endpoints starting with /api/ and finally saving the results to results.html:
 
-`python linkfinder.py -i 'Desktop/*.js' -r ^/api/ -o results.html`
+`linkfinder -i 'Desktop/*.js' -r ^/api/ -o results.html`
 
 ## Docker
 
